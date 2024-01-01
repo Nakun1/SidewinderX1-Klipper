@@ -37,16 +37,6 @@ channel = stable
 repo = fluidd-core/fluidd
 path = ~/fluidd
 
-[notifier ifttt_state_change]
-url = ifttt://dofTzX8jCpXsBkVjMK5zin@op-PrintDone/
-events = complete,paused
-body = "{event_name}"
-
-[notifier ifttt_shutdown]
-url = ifttt://dofTzX8jCpXsBkVjMK5zin@op-PrintShutdown/
-events = complete
-body = "Print {event_name}"
-
 [update_manager crowsnest]
 type = git_repo
 path = ~/crowsnest
@@ -58,4 +48,22 @@ type = web
 channel = stable
 repo = mainsail-crew/mainsail
 path = ~/mainsail
+
+[notifier ifttt_state_change]
+url = ifttt://dofTzX8jCpXsBkVjMK5zin@op-PrintDone/
+events = complete,paused
+body = "{event_name}"
+
+[notifier ifttt_shutdown]
+url = ifttt://dofTzX8jCpXsBkVjMK5zin@op-PrintShutdown/
+events = complete
+body = "Print {event_name}"
+
+[mqtt]
+address = 192.168.1.87
+port = 1883
+username = admin
+password = HT4Px2HiRXaCoc5r
+enable_moonraker_api = True
+instance_name = sidewinder
 
